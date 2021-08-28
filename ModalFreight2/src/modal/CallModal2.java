@@ -1,5 +1,6 @@
 package modal;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import modal.FreteModal.Country;
@@ -15,6 +16,7 @@ public class CallModal2 {
 		System.out.println("Type a modal transport Rail, Sea, Road, Air");
 		String ModalStr = scanner.next();
 		
+		try {
 		switch(ModalStr) {
 		
 		case "RAIL", "rail", "Rail","trem": 
@@ -45,12 +47,12 @@ public class CallModal2 {
 		break;
 		}
 		
-		if (modalf == 0.0) {
-			System.out.println("Wrong spelling, try again");    // message for the wrong spelling loop
+		}catch(InputMismatchException e) {
+			//System.out.print("Wrong spelling, try again");    // message for the wrong spelling loop
 		}
 		return modalf;
 		
-	}
+		}
 	
 	
 	
